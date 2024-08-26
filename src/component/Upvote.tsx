@@ -1,11 +1,9 @@
-import { useState } from "react";
-
 interface UpvoteProps {
   onClick: () => void;
   isSelected: boolean;
 }
 
-function Upvote({ onClick, isSelected } : UpvoteProps): JSX.Element {
+function Upvote({ onClick, isSelected }: UpvoteProps): JSX.Element {
 
   function handleButtonClick(): void {
     onClick();

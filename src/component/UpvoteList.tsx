@@ -18,12 +18,12 @@ function UpvoteList({ upvoteList, index }: UpvoteListProps): JSX.Element {
   return (
     <div>
       {Array(numberOfUpvote)
-        .fill()
-        .map(() => {
-          return <Upvote isSelected={upvoteState} onClick={hnadleUpvoteClick} />;
+        .fill(undefined)
+        .map((_: number, i: number) => {
+          return <Upvote isSelected={upvoteState} onClick={hnadleUpvoteClick} key={`Upvote_${i}`} />;
         })}
 
-      <button onClick={() => dispatch({ type: 'addUpvoteToList', payload: index})}>Add Upvote</button>
+      <button onClick={() => dispatch({ type: 'addUpvoteToList', payload: index })}>Add Upvote</button>
     </div>
   )
 }

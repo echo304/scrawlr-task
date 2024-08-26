@@ -2,7 +2,6 @@ import UpvoteList from './component/UpvoteList'
 import { useAppState } from './context/appContext'
 
 
-
 function App() {
   const { state } = useAppState();
 
