@@ -1,3 +1,5 @@
+import ArrowUp from "./icons/ArrowUp";
+
 interface UpvoteProps {
   onClick: () => void;
   isSelected: boolean;
@@ -9,12 +11,17 @@ function Upvote({ onClick, isSelected }: UpvoteProps): JSX.Element {
     onClick();
   }
 
+  const backgroundColor = isSelected ? 'bg-lightgray' : 'bg-almost-white';
+  const fillColor = isSelected ? 'fill-cobalt-blue' : 'fill-darkgray';
+
   return (
     <div>
-      <button onClick={handleButtonClick}
-        className="bg-sky-500 hover:bg-sky-700 m-2"
-      >Upvote</button>
-      {isSelected ? "Selected" : "Not Selected"}
+      <button
+        onClick={handleButtonClick}
+        className={`m-2 rounded ${backgroundColor}`}
+      >
+        <ArrowUp fillColorClass={fillColor} />
+      </button>
     </div>
   )
 }
